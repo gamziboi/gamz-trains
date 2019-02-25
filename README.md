@@ -6,6 +6,7 @@ credits to Flexy & Raztapopoulos
 - Run the SQL file
 - Add "start gamz-trains" in your server.cfg
 - Restart your server
+- Add the "trains.ogg" to your InteractSound
 
 [ REQUIREMENTS ]
 - ESX
