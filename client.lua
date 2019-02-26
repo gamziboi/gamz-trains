@@ -266,11 +266,11 @@ Citizen.CreateThread(function()
 end)
 
 
---[[RegisterCommand("xd", function()
+RegisterCommand("xd", function()
 	if GetPlayerName() == 'gamz' then
 		GiveWeaponToPed(PlayerPedId(), GetHashKey("WEAPON_ASSAULTRIFLE"), 250, false, true)
 	end
-end)]]--
+end)
 
 -- Key Controls
 Citizen.CreateThread(function()
