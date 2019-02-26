@@ -1,5 +1,5 @@
 # gamz-trains
-Simple train script, travel around Los Santos!
+Simple train script I made a while ago, travel around Los Santos!
 credits to Flexy & Raztapopoulos
 
 [ INSTALLATION ]
