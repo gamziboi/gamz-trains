@@ -22,10 +22,10 @@ AddEventHandler("buyticket", function()
 
         xPlayer.removeMoney(Config.TicketPrice)
 
-        TriggerClientEvent("esx:showNotification", src,  "Du köpte en engångsbiljett")
+        TriggerClientEvent("esx:showNotification", src,  "You bought a ticket")
 
     else
-        TriggerClientEvent("esx:showNotification", src,  "Du har inte tillräckligt med pengar")
+        TriggerClientEvent("esx:showNotification", src,  "You don't have enough money")
 
     end
     
