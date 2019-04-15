@@ -3,19 +3,6 @@ ESX = nil
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 
-
-ESX.RegisterServerCallback("hasticket", function(source, cb)
-    local xPlayer = ESX.GetPlayerFromId(source)
-    local ticket = xPlayer.getInventoryItem('ticket').count
-
-   
-    if ticket > 0 then
-        cb(true)
-    else
-        cb(false)
-    end
-end)
-
 RegisterServerEvent("usedTicket")
 AddEventHandler("usedTicket", function()
     local xPlayer = ESX.GetPlayerFromId(source)
@@ -24,28 +11,22 @@ AddEventHandler("usedTicket", function()
 
 end)
 
-ESX.RegisterServerCallback("harhanticket", function(source, cb)
-    local xPlayer = ESX.GetPlayerFromId(source)
-    local ticket = xPlayer.getInventoryItem('ticket').count
-
-    if ticket > 0 then
-        cb(true)
-    else 
-        cb(false) 
-    end
-end)
-
 RegisterServerEvent("buyticket")
 AddEventHandler("buyticket", function()
-    local xPlayer = ESX.GetPlayerFromId(source)
-    local _source = source
+    local src = source
+    local xPlayer = ESX.GetPlayerFromId(src)
 
-    if xPlayer.getMoney() >= 250 then
-        xPlayer.addInventoryItem("ticket", 1)
-        xPlayer.removeMoney("250")
-        TriggerClientEvent("esx:showNotification", _source,  "Du köpte en engångsbiljett")
+    if xPlayer.getMoney() >= Config.TicketPrice then
+
+        xPlayer.addInventoryItem(Config.NeededItem, 1)
+
+        xPlayer.removeMoney(Config.TicketPrice)
+
+        TriggerClientEvent("esx:showNotification", src,  "Du köpte en engångsbiljett")
+
     else
-        TriggerClientEvent("esx:showNotification", _source,  "Du har inte tillräckligt med pengar")
+        TriggerClientEvent("esx:showNotification", src,  "Du har inte tillräckligt med pengar")
 
     end
+    
 end)
