@@ -163,17 +163,6 @@ LoadModel = function(obj)
 	    Citizen.Wait(5)
 	end
  end
- 
-Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(0)
-
-		if IsControlJustReleased(0, 318) then
-			teleport({ label = "hej"})
-	
-		end	
-	end
-end)
 
 teleport = function(destination)
 
